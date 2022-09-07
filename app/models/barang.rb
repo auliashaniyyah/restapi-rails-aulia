@@ -1,0 +1,2 @@
+class Barang < ApplicationRecord
+end
