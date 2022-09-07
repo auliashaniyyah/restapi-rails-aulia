@@ -1,7 +1,7 @@
 server '149.129.213.216', port: 22, user: 'pelatihan', roles: [:web, :app, :db], primary: true
 set :rails_env, 'production'
 set :branch, 'development'
-set :deploy_to, '/home/pelatihan/apps/restapi-rails'
+set :deploy_to, '/home/pelatihan/apps/restapi-rails-aulia'
 set :migration_role, :db
 set :migration_servers, -> { primary(fetch(:migration_role)) }
 set :conditionally_migrate, true
