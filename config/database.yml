@@ -22,10 +22,14 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: restapi_rails_development
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  pool: 5
+  database: restapi_rails_aulia
   username : aulia
-  password : shaniyyah34
+  password : <%= ENV['RESTAPI_RAILS_DATABASE_PASSWORD'] %>
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -82,6 +86,10 @@ test:
 #
 production:
   <<: *default
-  database: restapi_rails_production
-  username: restapi_rails
+  adapter: postgresql
+  encoding: unicode
+  host: localhost
+  poool: 5
+  database: restapi_rails_aulia
+  username: aulia
   password: <%= ENV['RESTAPI_RAILS_DATABASE_PASSWORD'] %>
